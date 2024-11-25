@@ -1,28 +1,48 @@
 <odoo>
   <data>
-    <record model="ir.actions.act_window" id="implement.work_action">
-      <field name="name">Implement</field>
-      <field name="res_model">implement_work</field>
+    <!-- Clients -->
+    <record model="ir.actions.act_window" id="implement_client_action">
+      <field name="name">Clients</field>
+      <field name="res_model">implement_client</field>
       <field name="view_mode">list,form</field>
     </record>
 
-    <record model="ir.ui.view" id="implement.list">
-      <field name="name">implement list</field>
-      <field name="model">implement_work</field>
+    <record model="ir.ui.view" id="implement_client_list">
+      <field name="name">client list</field>
+      <field name="model">implement_client</field>
       <field name="arch" type="xml">
         <list>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-          <field name="description"/>
+          <field name="address"/>
+          <field name="district"/>
+          <field name="contact"/>
+          <field name="phone"/>
         </list>
       </field>
     </record>
 
+    <!-- Specialists -->
+    <record model="ir.actions.act_window" id="implement_specialist_action">
+      <field name="name">Specialists</field>
+      <field name="res_model">implement_specialist</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="implement_specialist_list">
+      <field name="name">specialist list</field>
+      <field name="model">implement_specialist</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="status"/>
+          <field name="email"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Menu -->
     <menuitem id="implement_menu_root" name="Implement">
-      <menuitem id="implement_menu_works" name="Works">
-        <menuitem id="implement_menu_work" name="Implement" action="implement_work_action"/>
-      </menuitem>
+      <menuitem id="implement_menu_clients" name="Clients" action="implement_client_action"/>
+      <menuitem id="implement_menu_specialists" name="Specialists" action="implement_specialist_action"/>
     </menuitem>
   </data>
 </odoo>
