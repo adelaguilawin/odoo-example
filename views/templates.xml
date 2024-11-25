@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="implement.work_action">
+      <field name="name">Implement</field>
+      <field name="res_model">implement_work</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="implement.list">
+      <field name="name">implement list</field>
+      <field name="model">implement_work</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+          <field name="description"/>
+        </list>
+      </field>
+    </record>
+
+    <menuitem id="implement_menu_root" name="Implement">
+      <menuitem id="implement_menu_works" name="Works">
+        <menuitem id="implement_menu_work" name="Implement" action="implement_work_action"/>
+      </menuitem>
+    </menuitem>
+  </data>
+</odoo>
